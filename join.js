@@ -738,6 +738,9 @@ var getDownloadVideosEnabled = function(){
 var get12HourFormat = function(){
 	return getOptionValue("checkbox","12hrformat");
 }
+var getDarkMode = function(){
+	return getOptionValue("checkbox","darkmode");
+}
 var getAutoClipboard = function(){
 	return getOptionValue("checkbox","autoclipboard");
 }
@@ -758,6 +761,9 @@ var getNotificationSeconds = function(){
 }
 var getNotificationRequireInteraction = function(){
     return getOptionValue("checkbox","notificationrequireinteraction");
+}
+var getAddDismissEverywhereButton = function(){
+    return getOptionValue("checkbox","adddimisseverywherebutton");
 }
 var getBetaEnabled = function(){
     return getOptionValue("checkbox","showbetafeatures");
@@ -900,6 +906,7 @@ var defaultValues = {
 	"downloadscreenshots": true,
 	"downloadvideos":false,
 	"12hrformat":false,
+	"darkmode":false,
 	"autoclipboard":false,
 	"clipboardnotificationshowcontents":true,
 	"autoclipboardnotification":true,
@@ -912,6 +919,7 @@ var defaultValues = {
     "showinfonotifications": true,
     "autoopenlinks": true,
     "notificationrequireinteraction": false,
+    "adddimisseverywherebutton": true,
     "showbetafeatures": false,
     "voiceenabled": false,
     "voicecontinuous": false,
@@ -1770,7 +1778,6 @@ var handleAutoClipboard = function(){
 	}
 }
 handleAutoClipboard();
-
 
 contextMenu.update(devices);
 /*UtilsObject.wait(2000,function(timeOut){
